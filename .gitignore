@@ -1,0 +1,8 @@
+*._*
+*DS_Store*
+*O.linux-arm*
+*O.Common*
+bin/
+db/
+dbd/
+envPaths

@@ -1,0 +1,63 @@
+record(ai, "RAW") {
+	field(DESC, "Current RAW")
+	field(SCAN, "5 second")
+	field(DTYP, "stream")
+	field(INP, "@moisturepi.proto getRaw H0")
+
+#Set display
+	field(HOPR, 5.5)
+	field(LOPR, 0.0)
+	field(EGU, "V")
+	field(PREC, 2)
+
+#Set limits
+	field(LOW, 0.5)
+	field(HIGH, 5.0)
+	field(LOLO, 0)
+	field(HIHI, 5.5)
+
+#Set Alarms
+	field(LSV, MINOR)
+	field(HSV, MINOR)
+	field(LLSV, MAJOR)
+	field(HHSV, MAJOR)
+}
+
+record(ai, "PERC") {
+        field(DESC, "Humidity %")
+        field(SCAN, "5 second")
+        field(DTYP, "stream")
+        field(INP, "@moisturepi.proto getPerc H0")	
+
+#Set display
+	field(HOPR, 100)
+	field(LOPR, 0)
+	field(EGU, "%")
+	field(PREC, 2)
+
+#Set limits
+	field(LOW, 0)
+	field(HIGH, 95)
+	field(LOLO, -0)
+	field(HIHI, 100)
+
+#Set Alarms
+	field(LSV, MINOR)
+	field(HSV, MINOR)
+	field(LLSV, INVALID)
+	field(HHSV, MAJOR)
+}
+
+record(ai, "MIN") {
+        field(DESC, "Min raw value")
+        field(DTYP, "stream")
+        field(INP, "@moisturepi.proto getMin H0")
+	field(PINI, "1")
+}
+
+record(ai, "MAX") {
+        field(DESC, "Max raw value")
+        field(DTYP, "stream")
+        field(INP, "@moisturepi.proto getPerc H0")
+	field(PINI, "1")
+}

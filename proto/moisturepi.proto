@@ -1,0 +1,37 @@
+getRaw {
+	out "RAW?";
+	in "%f";
+}
+
+getPerc {
+	out "PERC?";
+	in "%f";
+}
+
+getMin{
+	out "MIN?";
+	in "%f";
+	@init {
+	   out "MIN?";
+	   in "%f";	
+	}
+}
+
+getMax {
+	out "MAX?";
+	in "%f";
+	@init {
+	   out "MAX?";
+	   in "%f";	
+	}
+}
+
+#Terminator = CR LF;
+
+#setCurrent {
+#    out "CURRENT %.2f";
+#    @init {
+#        out "CURRENT?";
+#        in "CURRENT %f A";
+#    }
+#}
